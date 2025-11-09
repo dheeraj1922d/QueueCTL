@@ -18,6 +18,16 @@ A robust, production-ready CLI-based background job queue system with worker pro
 - ✅ **Configuration Management** - Configurable retry and backoff settings
 - ✅ **Comprehensive Status** - Real-time monitoring of jobs and workers
 
+
+## 🎬 Demo Video
+
+Watch QueueCTL in action:
+
+[![QueueCTL Demo](https://res.cloudinary.com/draptrzrc/video/upload/so_0/screen-capture_2_xlkmhf.jpg)](https://player.cloudinary.com/embed/?cloud_name=draptrzrc&public_id=screen-capture_2_xlkmhf&profile=cld-default)
+
+[▶️ Click here to watch the full demo](https://player.cloudinary.com/embed/?cloud_name=draptrzrc&public_id=screen-capture_2_xlkmhf&profile=cld-default)
+
+
 ## 📋 Table of Contents
 
 - [Installation](#-installation)
