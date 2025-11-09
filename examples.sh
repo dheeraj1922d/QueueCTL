@@ -59,12 +59,15 @@ echo "Example 5: Dead Letter Queue Operations"
 echo "---------------------------------------"
 queuectl dlq list
 # Try to retry a job from DLQ if exists
-DLQ_JOB=$(queuectl dlq list 2>/dev/null | grep -oP '\| \K[a-zA-Z0-9\-]+(?= +\|)' | head -1 || echo "")
-if [ ! -z "$DLQ_JOB" ]; then
-    echo "Retrying job from DLQ: $DLQ_JOB"
-    queuectl dlq retry "$DLQ_JOB" --reset-attempts
-    sleep 5
-    queuectl status
+DLQ_JOB=$(queuectl dlq list 2>/dev/null | grep -v "^+" | grep -v "^|.*ID.*|" | grep -oP '\| \K[a-zA-Z0-9\-]+(?= +\|)' | head -1)  
+  
+if [ -n "$DLQ_JOB" ]; then  
+    echo "Retrying job from DLQ: $DLQ_JOB"  
+    queuectl dlq retry "$DLQ_JOB" --reset-attempts  
+    sleep 5  
+    queuectl status  
+else  
+    echo "No jobs in DLQ"  
 fi
 echo ""
 
